@@ -134,7 +134,7 @@ export function Projects() {
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={project.image}
+                  src={`https://www.debmalya.in/${project.image}`}
                   alt={`Screenshot of ${project.title}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

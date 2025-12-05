@@ -182,9 +182,9 @@ out
 .nuxt
 dist
 
-# Gatsby files
+# Gatsby files (not applicable for Next.js)
 .cache/
-public
+# Note: public folder is NOT ignored - Next.js uses it for static assets
 
 # Storybook build outputs
 .out

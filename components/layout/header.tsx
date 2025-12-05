@@ -118,12 +118,13 @@ export function Header() {
               aria-label="Debmalya Biswas - Home"
             >
               <Image
-                src="/logo.svg"
+                src="https://ik.imagekit.io/5tgxhsqev/saffronstays-media/image/upload/docs/1764970910831204377"
                 alt="DB Logo"
                 width={40}
                 height={40}
                 className="rounded-full"
                 priority
+                unoptimized
               />
             </Link>
           </motion.div>

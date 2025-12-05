@@ -13,7 +13,7 @@ const projects = [
       "A React based Web App where you can see the live price of various cryptos and also the previous trend of the price of that specific Crypto built using ReactJs, ChakraUI, CoinGecko API, and FramerMotion.",
     tech: ["React", "ChakraUI", "CoinGecko API", "FramerMotion"],
     metrics: "Real-time Crypto Tracking",
-    image: "/real-time-analytics-dashboard-charts-graphs.jpg", // Placeholder - replace with actual image
+    image: "https://ik.imagekit.io/5tgxhsqev/saffronstays-media/image/upload/docs/1764973156544150485", // Placeholder - replace with actual image
     links: {
       live: "https://coinhub-db.vercel.app/",
       github: "https://github.com/AnTIdoTe003/coinhub",
@@ -26,7 +26,7 @@ const projects = [
       "A Blogging Website where you can post your own blog, edit and delete and view other user's blog. A custom Dashboard(CMS) has been made for all the users. Built using NextJs, TypeScript, MongoDB for database, Next-Auth for authentication with Custom Credentials Provider and Google Auth.",
     tech: ["Next.js", "TypeScript", "MongoDB", "Next-Auth", "SCSS", "REST API"],
     metrics: "Full-featured Blogging Platform",
-    image: "/ai-content-generation-interface.jpg", // Placeholder - replace with actual image
+    image: "https://ik.imagekit.io/5tgxhsqev/saffronstays-media/image/upload/docs/1764972992640469472", // Placeholder - replace with actual image
     links: {
       live: "https://theengineerguy.vercel.app/",
       github: "https://github.com/AnTIdoTe003/blogging-website",
@@ -39,7 +39,7 @@ const projects = [
       "A full-stack e-commerce web application made using the MERN Stack. Features include User Registration and Authentication, Filters, Functional Search Bar, Cart, Wishlist, Payment Gateway(RazorPay), User Dashboard, Admin Dashboard, Protected Routes. Admin can create, update, remove products or categories and update delivery status. Users can easily update their profile.",
     tech: ["React", "MongoDB", "Node.js", "Express", "RazorPay"],
     metrics: "Full-stack E-commerce Solution",
-    image: "/ecommerce-store-product-catalog.jpg", // Placeholder - replace with actual image
+    image: "https://ik.imagekit.io/5tgxhsqev/saffronstays-media/image/upload/docs/1764973085079326140", // Placeholder - replace with actual image
     links: {
       live: "https://apnadukan.vercel.app/",
       github: "https://github.com/AnTIdoTe003/ApnaDukan-Frontend",
@@ -134,7 +134,7 @@ export function Projects() {
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <Image
-                  src={`https://www.debmalya.in/${project.image}`}
+                  src={project.image}
                   alt={`Screenshot of ${project.title}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

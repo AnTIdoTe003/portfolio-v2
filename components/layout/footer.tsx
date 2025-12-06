@@ -6,9 +6,9 @@ import { Github, Linkedin, Mail, Heart } from "lucide-react"
 import { MagneticButton } from "@/components/ui/magnetic-button"
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/debmalya", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/debmalya", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:debmalya@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/AnTIdoTe003", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/debmalya-biswas-340655209", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:viperbale.db@gmail.com", label: "Email" },
 ]
 
 export function Footer() {

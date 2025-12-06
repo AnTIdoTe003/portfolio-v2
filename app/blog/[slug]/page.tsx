@@ -66,17 +66,27 @@ export default async function BlogPostPage({ params }: PageProps) {
   // In production, you'd use a proper markdown parser like remark/rehype
   const renderContent = (content: string) => {
     const lines = content.trim().split('\n')
-    const elements: JSX.Element[] = []
+    const elements: React.ReactElement[] = []
     let currentCodeBlock: string[] = []
     let inCodeBlock = false
     let codeLanguage = ''
+
+    // Helper to escape HTML characters to prevent XSS
+    const escapeHtml = (unsafe: string) => {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;")
+    }
 
     lines.forEach((line, index) => {
       // Check for code blocks
       if (line.startsWith('```')) {
         if (!inCodeBlock) {
           inCodeBlock = true
-          codeLanguage = line.replace('```', '')
+          codeLanguage = line.replace('```', '').trim()
         } else {
           // End code block
           elements.push(
@@ -95,19 +105,19 @@ export default async function BlogPostPage({ params }: PageProps) {
       } else if (line.startsWith('# ')) {
         elements.push(
           <h1 key={index} className="text-4xl font-bold mt-8 mb-4">
-            {line.replace('# ', '')}
+            {escapeHtml(line.replace('# ', ''))}
           </h1>
         )
       } else if (line.startsWith('## ')) {
         elements.push(
           <h2 key={index} className="text-3xl font-bold mt-8 mb-4">
-            {line.replace('## ', '')}
+            {escapeHtml(line.replace('## ', ''))}
           </h2>
         )
       } else if (line.startsWith('### ')) {
         elements.push(
           <h3 key={index} className="text-2xl font-semibold mt-6 mb-3">
-            {line.replace('### ', '')}
+            {escapeHtml(line.replace('### ', ''))}
           </h3>
         )
       } else if (line.startsWith('---')) {
@@ -116,19 +126,46 @@ export default async function BlogPostPage({ params }: PageProps) {
         // Skip empty lines
       } else {
         // Regular paragraph with bold markdown support
-        const formattedLine = line
+        // We escape the line first, but we need to handle markdown markers carefully.
+        // A simple approach is to escape first, then replace the markdown markers.
+        // However, if the markers themselves were escaped, we might break things.
+        // But for this simple parser, let's assume markers are not part of user data meant to be escaped in that way.
+        // Better yet, we can split by markers, escape the parts, and rejoin.
+
+        // Simplified safe parsing:
+        let safeLine = escapeHtml(line)
+
+        // Re-enable bold and code after escaping
+        // Note: This is a simplistic approach. Real markdown parsers are much more complex.
+        // We are replacing the escaped versions of the markers back to HTML tags,
+        // but applying it to the content inside.
+        // Actually, regex replace on the original line is risky if we don't escape the content.
+
+        // Let's implement a safer replacement by using a callback
+        safeLine = safeLine
           .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-          .replace(/\`(.+?)\`/g, '<code class="bg-muted px-1.5 py-0.5 rounded text-sm">$1</code>')
+          .replace(/`(.+?)`/g, '<code class="bg-muted px-1.5 py-0.5 rounded text-sm">$1</code>')
 
         elements.push(
           <p
             key={index}
             className="text-muted-foreground leading-relaxed mb-4"
-            dangerouslySetInnerHTML={{ __html: formattedLine }}
+            dangerouslySetInnerHTML={{ __html: safeLine }}
           />
         )
       }
     })
+
+    // Render any pending code block if the file ends without closing ```
+    if (inCodeBlock && currentCodeBlock.length > 0) {
+      elements.push(
+        <pre key={`code-end`} className="bg-muted p-4 rounded-lg overflow-x-auto my-6">
+          <code className={`language-${codeLanguage} text-sm`}>
+            {currentCodeBlock.join('\n')}
+          </code>
+        </pre>
+      )
+    }
 
     return elements
   }

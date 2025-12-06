@@ -8,6 +8,19 @@ import { smoothEase } from "@/lib/motion"
 
 const projects = [
   {
+    title: "react-api-toolkit",
+    description:
+      "A versatile and powerful collection of React hooks for handling API requests, mutations, pagination, infinite scrolling, file uploads, polling, and more. Simplifies data fetching with a standardized API.",
+    tech: ["React", "TypeScript", "NPM", "Hooks", "API"],
+    metrics: "Versatile React Hooks Library",
+    image: "/assets/projects/react-api-toolkit.svg",
+    links: {
+      live: "https://www.npmjs.com/package/react-api-toolkit",
+      github: "https://github.com/AnTIdoTe003/react-api-toolkit",
+    },
+    featured: true,
+  },
+  {
     title: "Coinhub",
     description:
       "A React based Web App where you can see the live price of various cryptos and also the previous trend of the price of that specific Crypto built using ReactJs, ChakraUI, CoinGecko API, and FramerMotion.",

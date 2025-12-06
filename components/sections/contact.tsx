@@ -101,14 +101,14 @@ export function Contact() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
           variants={containerVariants}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.2 }}
         >
           {/* Left - Contact Info */}
-          <motion.div className="md:col-span-1" variants={itemVariants}>
+          <motion.div className="md:col-span-1 order-2 md:order-1" variants={itemVariants}>
             <nav className="space-y-4" aria-label="Social links">
               {socialLinks.map((link, index) => {
                 const Icon = link.icon
@@ -150,10 +150,10 @@ export function Contact() {
           </motion.div>
 
           {/* Right - Contact Form */}
-          <motion.div className="md:col-span-2" variants={itemVariants}>
+          <motion.div className="md:col-span-2 order-1 md:order-2" variants={itemVariants}>
             <form
               onSubmit={handleSubmit}
-              className="space-y-6 bg-card p-8 rounded-lg border border-border"
+              className="space-y-6 bg-card p-4 sm:p-6 md:p-8 rounded-lg border border-border"
               aria-label="Contact form"
             >
               <motion.div

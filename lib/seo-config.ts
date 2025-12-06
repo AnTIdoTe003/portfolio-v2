@@ -112,6 +112,15 @@ export const siteConfig = {
 // Projects data for structured data
 export const projectsData = [
   {
+    name: "react-api-toolkit",
+    description:
+      "A versatile and powerful collection of React hooks for handling API requests, mutations, pagination, infinite scrolling, file uploads, polling, and more. Simplifies data fetching with a standardized API.",
+    url: "https://www.npmjs.com/package/react-api-toolkit",
+    image: "/assets/projects/react-api-toolkit.svg",
+    technologies: ["React", "TypeScript", "NPM", "Hooks", "API"],
+    datePublished: "2024-01-01",
+  },
+  {
     name: "Coinhub",
     description:
       "A React based Web App where you can see the live price of various cryptos and also the previous trend of the price of that specific Crypto built using ReactJs, ChakraUI, CoinGecko API, and FramerMotion.",

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
@@ -50,6 +50,35 @@ export function Header() {
       document.body.style.overflow = ""
     }
   }, [isOpen])
+
+  // Handle smooth scrolling for hash links
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only handle hash links (internal navigation)
+    if (href.startsWith("#")) {
+      e.preventDefault()
+
+      // Close mobile menu first
+      setIsOpen(false)
+
+      // Wait a bit for menu to start closing, then scroll
+      setTimeout(() => {
+        const element = document.querySelector(href)
+        if (element) {
+          const headerHeight = 64 // h-16 = 64px
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: shouldReduceMotion ? "auto" : "smooth",
+          })
+        }
+      }, 100) // Small delay to allow menu animation to start
+    } else {
+      // For non-hash links (like /blog), just close the menu
+      setIsOpen(false)
+    }
+  }
 
   const headerVariants = {
     transparent: {
@@ -137,6 +166,22 @@ export function Header() {
             <MagneticButton key={item.href} strength={0.15}>
               <motion.a
                 href={item.href}
+                onClick={(e) => {
+                  if (item.href.startsWith("#")) {
+                    e.preventDefault()
+                    const element = document.querySelector(item.href)
+                    if (element) {
+                      const headerHeight = 64 // h-16 = 64px
+                      const elementPosition = element.getBoundingClientRect().top
+                      const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: shouldReduceMotion ? "auto" : "smooth",
+                      })
+                    }
+                  }
+                }}
                 className="relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 focus:outline-none focus-visible:text-foreground py-1"
                 role="menuitem"
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
@@ -214,7 +259,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className="block py-3 px-4 text-foreground hover:text-primary hover:bg-primary/5 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   role="menuitem"
                   custom={index}
                   variants={linkVariants}

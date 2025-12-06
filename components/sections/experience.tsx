@@ -134,21 +134,21 @@ export function Experience() {
           {experiences.map((exp, idx) => (
             <motion.article
               key={idx}
-              className="group relative pl-8 border-l-2 border-primary/20 hover:border-primary/50 transition-colors duration-300"
+              className="group relative pl-6 md:pl-8 border-l-2 border-primary/20 hover:border-primary/50 transition-colors duration-300"
               variants={itemVariants}
               role="listitem"
               aria-label={`${exp.role} at ${exp.company}`}
             >
               {/* Timeline dot */}
               <motion.div
-                className="absolute -left-4 top-2 w-6 h-6 rounded-full bg-background border-2 border-primary/50 group-hover:border-primary transition-colors duration-300"
+                className="absolute -left-3 md:-left-4 top-2 w-5 h-5 md:w-6 md:h-6 rounded-full bg-background border-2 border-primary/50 group-hover:border-primary transition-colors duration-300"
                 whileHover={shouldReduceMotion ? {} : { scale: 1.2 }}
                 aria-hidden="true"
               />
 
               {/* Content */}
               <motion.div
-                className="bg-background rounded-lg p-6 transition-all duration-300"
+                className="bg-background rounded-lg p-4 md:p-6 transition-all duration-300"
                 whileHover={
                   shouldReduceMotion
                     ? {}

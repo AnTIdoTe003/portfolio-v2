@@ -35,7 +35,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative min-h-screen overflow-hidden bg-background pt-32 pb-20 flex items-center justify-center"
+      className="relative min-h-screen overflow-hidden bg-background pt-24 md:pt-32 pb-12 md:pb-20 flex items-center justify-center"
       aria-label="Hero introduction"
     >
       {/* 3D Background */}
@@ -98,7 +98,21 @@ export function Hero() {
           <MagneticButton strength={0.2}>
             <motion.a
               href="#projects"
-              className="inline-block px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector("#projects")
+                if (element) {
+                  const headerHeight = 64 // h-16 = 64px
+                  const elementPosition = element.getBoundingClientRect().top
+                  const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: shouldReduceMotion ? "auto" : "smooth",
+                  })
+                }
+              }}
+              className="inline-block w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-primary text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 text-sm sm:text-base"
               whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
               aria-label="View my projects"
@@ -110,7 +124,21 @@ export function Hero() {
           <MagneticButton strength={0.2}>
             <motion.a
               href="#contact"
-              className="inline-block px-8 py-4 rounded-lg border border-primary/30 text-foreground font-semibold transition-all duration-300 hover:bg-primary/10"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector("#contact")
+                if (element) {
+                  const headerHeight = 64 // h-16 = 64px
+                  const elementPosition = element.getBoundingClientRect().top
+                  const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: shouldReduceMotion ? "auto" : "smooth",
+                  })
+                }
+              }}
+              className="inline-block w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-4 rounded-lg border border-primary/30 text-foreground font-semibold transition-all duration-300 hover:bg-primary/10 text-sm sm:text-base"
               whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
               aria-label="Get in touch with me"
@@ -122,7 +150,7 @@ export function Hero() {
           <MagneticButton strength={0.2}>
             <motion.a
               href="https://debmalya-portfolio.vercel.app/resume.pdf"
-              className="inline-block px-8 py-4 rounded-lg border border-border text-foreground font-semibold transition-all duration-300 hover:bg-card"
+              className="inline-block w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-4 rounded-lg border border-border text-foreground font-semibold transition-all duration-300 hover:bg-card text-sm sm:text-base"
               whileHover={shouldReduceMotion ? {} : { scale: 1.02, y: -2 }}
               whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
               aria-label="Download my resume"

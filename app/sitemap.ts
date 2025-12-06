@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/seo-config"
+import { getAllPosts } from "@/lib/blog-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url
@@ -44,9 +45,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Note: Add project pages here if you create dedicated project pages
-  // const projectPages = projectsData.map(...)
+  // Blog pages
+  const blogPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+  ]
 
-  return [...mainPages]
+  // Individual blog posts
+  const posts = getAllPosts()
+  const blogPosts: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }))
+
+  return [...mainPages, ...blogPages, ...blogPosts]
 }
 

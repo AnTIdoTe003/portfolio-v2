@@ -1,0 +1,63 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#paint0_radial)" opacity="0.4"/>
+
+  <!-- Abstract Grid Background -->
+  <mask id="grid-mask">
+    <rect width="1200" height="630" fill="white"/>
+    <path d="M0 63H1200M0 126H1200M0 189H1200M0 252H1200M0 315H1200M0 378H1200M0 441H1200M0 504H1200M0 567H1200" stroke="black" stroke-width="1"/>
+    <path d="M60 0V630M120 0V630M180 0V630M240 0V630M300 0V630M360 0V630M420 0V630M480 0V630M540 0V630M600 0V630M660 0V630M720 0V630M780 0V630M840 0V630M900 0V630M960 0V630M1020 0V630M1080 0V630M1140 0V630" stroke="black" stroke-width="1"/>
+  </mask>
+  <rect width="1200" height="630" fill="#222" mask="url(#grid-mask)" opacity="0.2"/>
+
+  <!-- Main Element: Portfolio UI Abstract -->
+  <g filter="url(#glow)">
+    <rect x="300" y="150" width="600" height="380" rx="20" fill="#111" stroke="url(#paint1_linear)" stroke-width="4"/>
+    <circle cx="340" cy="190" r="8" fill="#FF5F56"/>
+    <circle cx="370" cy="190" r="8" fill="#FFBD2E"/>
+    <circle cx="400" cy="190" r="8" fill="#27C93F"/>
+
+    <!-- Code Lines -->
+    <rect x="340" y="250" width="200" height="20" rx="4" fill="#333"/>
+    <rect x="340" y="290" width="300" height="20" rx="4" fill="#222"/>
+    <rect x="340" y="330" width="280" height="20" rx="4" fill="#222"/>
+
+    <!-- Image Placeholder -->
+    <rect x="680" y="250" width="180" height="180" rx="10" fill="url(#paint2_linear)"/>
+  </g>
+
+  <!-- Decorative Elements -->
+  <circle cx="1000" cy="100" r="150" fill="url(#paint3_radial)" opacity="0.3" filter="url(#blur)"/>
+  <circle cx="100" cy="500" r="200" fill="url(#paint4_radial)" opacity="0.2" filter="url(#blur)"/>
+
+  <defs>
+    <filter id="glow" x="250" y="100" width="700" height="480" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="20" result="effect1_foregroundBlur"/>
+    </filter>
+    <filter id="blur" x="-200" y="-200" width="1600" height="1030" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur"/>
+    </filter>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 315) rotate(90) scale(315 600)">
+      <stop stop-color="#2D2D2D"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear" x1="300" y1="150" x2="900" y2="530" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="680" y1="250" x2="860" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <radialGradient id="paint3_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1000 100) rotate(90) scale(150)">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paint4_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 500) rotate(90) scale(200)">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

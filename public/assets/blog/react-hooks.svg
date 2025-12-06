@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+
+  <!-- Abstract Hook Loops -->
+  <g opacity="0.8">
+    <path d="M300 315C300 200 450 200 450 315C450 430 300 430 300 315Z" stroke="url(#paint0_linear)" stroke-width="20" stroke-linecap="round"/>
+    <path d="M500 315C500 150 750 150 750 315C750 480 500 480 500 315Z" stroke="url(#paint1_linear)" stroke-width="20" stroke-linecap="round"/>
+    <path d="M800 315C800 250 900 250 900 315C900 380 800 380 800 315Z" stroke="url(#paint2_linear)" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <!-- Connection Nodes -->
+  <circle cx="450" cy="315" r="15" fill="#61DAFB"/>
+  <circle cx="750" cy="315" r="15" fill="#61DAFB"/>
+  <circle cx="900" cy="315" r="15" fill="#61DAFB"/>
+
+  <!-- React Symbol Hint -->
+  <ellipse cx="600" cy="315" rx="280" ry="100" transform="rotate(30 600 315)" stroke="#61DAFB" stroke-width="2" opacity="0.2"/>
+  <ellipse cx="600" cy="315" rx="280" ry="100" transform="rotate(-30 600 315)" stroke="#61DAFB" stroke-width="2" opacity="0.2"/>
+  <ellipse cx="600" cy="315" rx="280" ry="100" stroke="#61DAFB" stroke-width="2" opacity="0.2"/>
+
+  <defs>
+    <linearGradient id="paint0_linear" x1="300" y1="200" x2="450" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#61DAFB"/>
+      <stop offset="1" stop-color="#282C34"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="500" y1="150" x2="750" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#98E7FC"/>
+      <stop offset="1" stop-color="#61DAFB"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="800" y1="250" x2="900" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#61DAFB"/>
+      <stop offset="1" stop-color="#282C34"/>
+    </linearGradient>
+  </defs>
+</svg>

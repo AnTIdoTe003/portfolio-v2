@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#3178C6"/>
+
+  <!-- Background Pattern -->
+  <path d="M0 0H1200V630H0V0Z" fill="#235a97"/>
+  <g opacity="0.1">
+    <path d="M100 100L200 200M300 100L400 200" stroke="white" stroke-width="10"/>
+  </g>
+
+  <!-- Shield Concept -->
+  <path d="M600 100L900 200V400C900 550 600 600 600 600C600 600 300 550 300 400V200L600 100Z" fill="#3178C6" stroke="white" stroke-width="10"/>
+
+  <!-- TS Logo Lettering -->
+  <path d="M560 450H520V330H480V290H600V330H560V450Z" fill="white"/>
+  <path d="M680 330H640V350H680C691.046 350 700 358.954 700 370V430C700 441.046 691.046 450 680 450H620V410H660V390H620C608.954 390 600 381.046 600 370V310C600 298.954 608.954 290 620 290H680V330Z" fill="white"/>
+
+  <!-- Checkmark -->
+  <path d="M850 480L950 580L1150 380" stroke="#4ADE80" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Code Brackets -->
+  <text x="100" y="500" font-family="monospace" font-size="120" fill="white" opacity="0.3">{ }</text>
+  <text x="950" y="200" font-family="monospace" font-size="120" fill="white" opacity="0.3">&lt;T&gt;</text>
+</svg>

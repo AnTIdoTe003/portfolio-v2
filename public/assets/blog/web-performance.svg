@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#111827"/>
+
+  <!-- Speedometer Arc -->
+  <path d="M200 500A400 400 0 0 1 1000 500" stroke="#374151" stroke-width="40" stroke-linecap="round"/>
+  <path d="M200 500A400 400 0 0 1 800 153" stroke="url(#paint0_linear)" stroke-width="40" stroke-linecap="round"/>
+
+  <!-- Needle -->
+  <path d="M600 500L800 153" stroke="#EF4444" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="600" cy="500" r="30" fill="#EF4444"/>
+
+  <!-- Lightning Bolt -->
+  <path d="M600 100L650 200H580L630 300" stroke="#FBBF24" stroke-width="8" fill="#FBBF24" opacity="0.8"/>
+
+  <!-- Motion Lines -->
+  <path d="M1100 300H1000" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M1150 350H950" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+  <path d="M1050 250H1000" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+  <defs>
+    <linearGradient id="paint0_linear" x1="200" y1="500" x2="1000" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10B981"/>
+      <stop offset="0.5" stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+</svg>
